@@ -1,1 +1,8 @@
-<p>category works!</p>
+<div>
+  <input type="text" [(ngModel)]="searchQuery" (input)="filterCategories()" placeholder="Rechercher une catégorie">
+</div>
+<div class="categories">
+  <div *ngFor="let category of filteredCategories" class="category-card" (click)="navigateToQuiz(category.id)">
+    {{ category.name }}
+  </div>
+</div>
