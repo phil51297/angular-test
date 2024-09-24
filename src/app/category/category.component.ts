@@ -10,17 +10,19 @@ import { CategoryService } from '../shared/services/category.service';
 export class CategoryComponent implements OnInit {
   @Input() title: string = ''; 
 
-  categories: any[]= [];
+  categories: any[]= this.categoryService.categories;
   filteredCategories: any[] = [];
   searchQuery: string = '';
 
   constructor(private categoryService: CategoryService, private router: Router) { }
 
   ngOnInit(): void {
-    this.categoryService.getCategories().subscribe((categories: any[]) => {
-      this.categories = categories;
-      this.filteredCategories = this.categories;
-    });
+    this.categoryService.getCategories();
+    // .subscribe((categories: any[]) => {
+    //   this.categories = categories;
+    this.filteredCategories = this.categories;
+    // });
+    console.log(this.categories);
   }
 
   filterCategories(): void {
