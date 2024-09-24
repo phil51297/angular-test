@@ -14,7 +14,8 @@ export class QuizComponent implements OnInit {
   constructor(
     private quizService: QuizService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private categoryService: CategoryService
   ) { }
 
   ngOnInit(): void {

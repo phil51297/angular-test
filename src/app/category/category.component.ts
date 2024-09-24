@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { CategoryService } from '../shared/services/category.service';
 
@@ -8,6 +8,8 @@ import { CategoryService } from '../shared/services/category.service';
   styleUrls: ['./category.component.scss']
 })
 export class CategoryComponent implements OnInit {
+  @Input() title: string = ''; // Add the @Input() property
+
   categories: any[] = [];
   filteredCategories: any[] = [];
   searchQuery: string = '';
@@ -25,6 +27,11 @@ export class CategoryComponent implements OnInit {
     this.filteredCategories = this.categories.filter(category =>
       category.name.toLowerCase().includes(this.searchQuery.toLowerCase())
     );
+  }
+
+  resetFilter(): void {
+    this.searchQuery = '';
+    this.filteredCategories = this.categories;
   }
 
   navigateToQuiz(categoryId: number): void {
