@@ -1,3 +1,5 @@
+Philippe Bonnafous, Bassaget Elwin
+
 # AngularQuiz
 
 Run backend json : 
