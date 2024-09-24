@@ -1,0 +1,21 @@
+.category {
+  @apply flex flex-col items-center justify-center;
+
+  &_search {
+    @apply w-full max-w-md mb-4;
+    input {
+      @apply w-full border border-violet-500 px-4 py-2 rounded;
+    }
+  }
+
+  &_list {
+    @apply flex flex-wrap justify-center gap-4;
+  }
+
+  &_card {
+    @apply bg-white border border-gray-200 rounded-lg shadow-md p-4 cursor-pointer hover:bg-gray-100;
+    &:hover {
+      @apply shadow-lg;
+    }
+  }
+}
