@@ -10,7 +10,7 @@ import { CategoryService } from '../shared/services/category.service';
 export class CategoryComponent implements OnInit {
   @Input() title: string = ''; 
 
-  categories: any[]= [];
+  categories: any[]= this.categoryService.categories;
   filteredCategories: any[] = [];
   searchQuery: string = '';
 
