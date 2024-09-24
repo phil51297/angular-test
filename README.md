@@ -1,6 +1,8 @@
 # AngularQuiz
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.7.
+Run backend json : 
+
+```json-server --watch backend/db.json --port 3000 ```
 
 ## Development server
 

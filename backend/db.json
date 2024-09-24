@@ -1,4 +1,18 @@
 {
+  "category": [
+    {
+      "id": 1,
+      "name": "Angular"
+    },
+    {
+      "id": 2,
+      "name": "JavaScript"
+    },
+    {
+      "id": 3,
+      "name": "Vue Js"
+    }
+  ],
   "questions": [
     {
       "id": 1,
