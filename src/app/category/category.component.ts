@@ -15,11 +15,12 @@ export class CategoryComponent implements OnInit {
   constructor(private categoryService: CategoryService, private router: Router) { }
 
   ngOnInit(): void {
-    this.categoryService.getCategories()
+    this.categoryService.getCategories();
     // .subscribe((categories: any[]) => {
     //   this.categories = categories;
     this.filteredCategories = this.categories;
     // });
+    console.log(this.categories);
   }
 
   filterCategories(): void {
