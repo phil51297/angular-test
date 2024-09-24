@@ -8,24 +8,23 @@ import { CategoryService } from '../shared/services/category.service';
   styleUrls: ['./category.component.scss']
 })
 export class CategoryComponent implements OnInit {
-  @Input() title: string = ''; // Add the @Input() property
+  @Input() title: string = ''; 
 
-  categories: any[] = this.categoryService.categories;
+  categories: any[]= [];
   filteredCategories: any[] = [];
   searchQuery: string = '';
 
   constructor(private categoryService: CategoryService, private router: Router) { }
 
   ngOnInit(): void {
-    this.categoryService.getCategories()
-    // .subscribe((categories: any[]) => {
-    //   this.categories = categories;
-    this.filteredCategories = this.categories;
-    // });
+    this.categoryService.getCategories().subscribe((categories: any[]) => {
+      this.categories = categories;
+      this.filteredCategories = this.categories;
+    });
   }
 
   filterCategories(): void {
-    this.filteredCategories = this.categories.filter(category =>
+    this.filteredCategories = this.categories.filter((category: any)=>
       category.name.toLowerCase().includes(this.searchQuery.toLowerCase())
     );
   }

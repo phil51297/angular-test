@@ -1,5 +1,5 @@
 <div>
-  <h1>{{ title }}</h1> <!-- Use the @Input() property here -->
+  <h1>{{ title }}</h1> 
   <input type="text" [(ngModel)]="searchQuery" (input)="filterCategories()" placeholder="Rechercher une catégorie">
   <button (click)="resetFilter()">Réinitialiser</button>
 </div>
