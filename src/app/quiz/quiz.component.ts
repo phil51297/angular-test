@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import { QuizService } from "../shared/services/quiz.service";
+import { CategoryService } from '../shared/services/category.service';
 
 @Component({
   selector: 'app-quiz',
@@ -15,7 +16,8 @@ export class QuizComponent implements OnInit {
   constructor(
     private quizService: QuizService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private categoryService: CategoryService
   ) { }
 
   ngOnInit(): void {
